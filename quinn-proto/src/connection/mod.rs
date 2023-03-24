@@ -1086,6 +1086,10 @@ impl Connection {
         self.path.rtt.get()
     }
 
+    pub fn jitter(&self) -> Duration {
+        self.path.rtt.jitter()
+    }
+
     /// Current state of this connection's congestion controller, for debugging purposes
     pub fn congestion_state(&self) -> &dyn Controller {
         self.path.congestion.as_ref()

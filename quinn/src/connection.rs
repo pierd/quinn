@@ -436,6 +436,10 @@ impl Connection {
         self.0.lock("rtt").inner.rtt()
     }
 
+    pub fn jitter(&self) -> Duration {
+        self.0.lock("jitter").inner.jitter()
+    }
+
     /// Returns connection statistics
     pub fn stats(&self) -> ConnectionStats {
         self.0.lock("stats").inner.stats()

@@ -142,6 +142,10 @@ impl RttEstimator {
         self.smoothed.unwrap_or(self.latest)
     }
 
+    pub fn jitter(&self) -> Duration {
+        self.var
+    }
+
     /// Conservative estimate of RTT
     ///
     /// Takes the maximum of smoothed and latest RTT, as recommended
